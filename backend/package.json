@@ -1,0 +1,31 @@
+{
+  "name": "imageboard-backend",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "migrate": "psql $DATABASE_URL -f ../migrations/001_init.sql",
+    "test": "jest --runInBand --forceExit"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.11.3",
+    "sharp": "^0.33.2",
+    "test": "^3.3.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.3",
+    "supertest": "^6.3.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}
